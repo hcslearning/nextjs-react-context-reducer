@@ -1,7 +1,11 @@
+import { StoreContextProvider } from "./StoreContexto"
+
 export function Layout(props){
     return (
-        <div className="container">
-            {props.children}
-        </div>
+        <StoreContextProvider>
+            <div className="container">
+                {props.children}
+            </div>
+        </StoreContextProvider>
     )
 }

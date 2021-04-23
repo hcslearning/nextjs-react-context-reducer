@@ -1,4 +1,8 @@
-export function Carro(props){
+import { useContext } from "react"
+import { StoreContext } from "./StoreContexto"
+
+export function Carro(props) {
+    const contexto = useContext( StoreContext )
     return (
         <div className="carro">
             <div className="carro-header">
@@ -6,12 +10,11 @@ export function Carro(props){
             </div>
 
             <div className="carro-body">
-                Producto #1 x 2 <br />
-                Producto #2 x 1 <br /> <br />
+                {contexto?.state?.cartItems?.map( (ci, index) => <p key={index}>{ci}</p>)}
+                <br /><br />
 
-                SUBTOTAL: $90 <br />
-                ENVIO: $10 <br />
-                TOTAL: $100 <br />
+                
+                TOTAL: ${contexto.state.total} <br />
             </div>
         </div>
     )
