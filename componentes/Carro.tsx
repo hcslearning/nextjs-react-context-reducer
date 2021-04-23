@@ -1,18 +1,18 @@
-import { useContext } from "react"
-import { StoreContext } from "../lib/StoreContext"
-
 export function Carro(props){
-    const contexto = useContext(StoreContext)
     return (
-        <div>
-            <h2>Carro</h2>
+        <div className="carro">
+            <div className="carro-header">
+                <h2>Carro de Compras</h2>
+            </div>
 
-            ITEM COUNT: {contexto.state.cartItems.length} <br /><br />
+            <div className="carro-body">
+                Producto #1 x 2 <br />
+                Producto #2 x 1 <br /> <br />
 
-            NETO: <br />
-            IVA: <br />
-            TOTAL: <br />
-
+                SUBTOTAL: $90 <br />
+                ENVIO: $10 <br />
+                TOTAL: $100 <br />
+            </div>
         </div>
     )
 }
